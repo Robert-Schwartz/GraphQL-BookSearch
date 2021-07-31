@@ -1,7 +1,7 @@
 // import GraphQL from tag
-import gql from "graphql-tag";
+import {gql} from "graphql-tag";
 
-// export ME query
+// execute the me query set up using Apollo Server.
 export const GET_ME = gql`
 	{
 		me {

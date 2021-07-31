@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // ==============================================
 
-// import Apollo
+// Import Apollo
 import {
 	ApolloProvider,
 	ApolloClient,
@@ -13,7 +13,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 // ==============================================
 
-// import pages and components
+// Import pages and components
 import SearchBooks from "./pages/SearchBooks";
 import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
@@ -25,7 +25,7 @@ const httpLink = createHttpLink({
 });
 // ==============================================
 
-// set headers to the user Auth token for each request
+// Set headers to the user Auth token for each request
 const authLink = setContext((_, { headers }) => {
 	const token = localStorage.getItem("id_token");
 	return {
@@ -36,7 +36,7 @@ const authLink = setContext((_, { headers }) => {
 	};
 });
 
-// link to API 
+// Link to API
 const client = new ApolloClient({
 	link: authLink.concat(httpLink),
 	cache: new InMemoryCache(),
