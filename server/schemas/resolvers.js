@@ -18,6 +18,7 @@ const resolvers = {
 	},
 
 	Mutation: {
+		//add a user
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
 			const token = signToken(user);
@@ -28,19 +29,20 @@ const resolvers = {
 			const user = await User.findOne({ email });
 
 			if (!user) {
-				throw new AuthenticationError("Incorrect credentials");
+				throw new AuthenticationError("Incorrect username or password");
 			}
 
 			const correctPw = await user.isCorrectPassword(password);
 
 			if (!correctPw) {
-				throw new AuthenticationError("Incorrect credentials");
+				throw new AuthenticationError("Incorrect username or password");
 			}
 
 			const token = signToken(user);
 			return { token, user };
 		},
 
+		// Save a Book
 		saveBook: async (parent, { bookData }, context) => {
 			// check for user
 			if (context.user) {
@@ -55,8 +57,10 @@ const resolvers = {
 
 				return user;
 			}
-			throw new AuthenticationError("You need to be logged in!");
+			throw new AuthenticationError("You need to be logged in to do that!");
 		},
+
+		// Remove a Book
 		removeBook: async (parent, { bookId }, context) => {
 			// check for user
 			if (context.user) {
@@ -64,16 +68,17 @@ const resolvers = {
 					//where
 					{ _id: context.user._id },
 					//how to update user
-					{ $pull: { bookId } },
+					{ $pull: { savedBooks: { bookId: bookId } } },
 					// create a new list
 					{ new: true }
 				);
 
 				return user;
 			}
-			throw new AuthenticationError("You need to be logged in!");
+			throw new AuthenticationError("You need to be logged in to do that!");
 		},
 	},
 };
 
+// Export resolvers	
 module.exports = resolvers;
