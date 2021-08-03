@@ -1,5 +1,6 @@
 // Imports
 import React, { useState, useEffect } from "react";
+
 // Import Hooks/Utilities
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
@@ -19,8 +20,8 @@ import {
 
 // SAVED BOOKS FUNCTION
 const SavedBooks = () => {
-  // set variables
 	const [removeBook] = useMutation(REMOVE_BOOK);
+
 	const { loading, error, data } = useQuery(GET_ME);
 
 	if (loading) return "Loading...";
@@ -59,7 +60,7 @@ const SavedBooks = () => {
 					{userData.savedBooks.length
 						? `Viewing ${userData.savedBooks.length} saved ${
 								userData.savedBooks.length === 1 ? "book" : "books"
-						}:`
+						  }:`
 						: "You have no saved books!"}
 				</h2>
 				<CardColumns>
