@@ -12,7 +12,7 @@ export const LOGIN_USER = gql`
 			}
 		}
 	}
-`;
+`
 
 // Add User
 export const ADD_USER = gql`
@@ -25,9 +25,8 @@ export const ADD_USER = gql`
 			}
 		}
 	}
-`;
+`
 
-// Save book
 export const SAVE_BOOK = gql`
 	mutation saveBook($content: BookInfo!) {
 		saveBook(content: $content) {
@@ -39,7 +38,7 @@ export const SAVE_BOOK = gql`
 			}
 		}
 	}
-`;
+`
 
 // Remove Book
 export const REMOVE_BOOK = gql`
@@ -53,4 +52,4 @@ export const REMOVE_BOOK = gql`
 			}
 		}
 	}
-`;
+`
