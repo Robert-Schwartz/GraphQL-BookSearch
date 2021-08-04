@@ -21,10 +21,11 @@ A fully functioning Google Books API search engine built with a RESTful API, and
 
 ## Technologies
 
-This project was built using HTML, CSS, Javascript, Bootstrap styling, as well as:
+This project was built using HTML, CSS, Javascript, as well as:
 
 - React
 - GraphQL
+- Google Books API
 - Node
 - NoSQL
 - Express
