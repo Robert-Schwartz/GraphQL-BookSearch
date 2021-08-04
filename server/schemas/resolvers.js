@@ -43,14 +43,14 @@ const resolvers = {
 		},
 
 		// Save a Book
-		saveBook: async (parent, { bookData }, context) => {
+		saveBook: async (parent, { content }, context) => {
 			// check for user
 			if (context.user) {
 				const user = await User.findByIdAndUpdate(
 					//where
 					{ _id: context.user._id },
 					//how to update user
-					{ $push: { savedBooks: bookData } },
+					{ $push: { savedBooks: content } },
 					// create a new list
 					{ new: true }
 				);
@@ -80,5 +80,5 @@ const resolvers = {
 	},
 };
 
-// Export resolvers	
+// Export resolvers
 module.exports = resolvers;
