@@ -4,7 +4,7 @@ GitHub Repo: [https://github.com/Robert-Schwartz/GraphQL-BookSearch] <br>
 
 Deployed at: [https://arcane-brushlands-41942.herokuapp.com](https://arcane-brushlands-41942.herokuapp.com) <br>
 
-<img src="preview1.png" alt="previewSearch" width="250"/>   <img src="preview2.png" alt="previewSaved" width="250"/>
+<img src="preview1.png" alt="previewSearch" width="400"/>   <img src="preview2.png" alt="previewSaved" width="400"/>
 
 ## Description
 
