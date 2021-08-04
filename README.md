@@ -1,6 +1,4 @@
-# Book Search Engine Starter Code
-
-https://arcane-brushlands-41942.herokuapp.com
+# Book Search Engine
 
 GitHub Repo: [https://github.com/Robert-Schwartz/GraphQL-BookSearch] <br>
 
